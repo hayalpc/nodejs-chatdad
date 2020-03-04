@@ -1,0 +1,17 @@
+extends layout
+append stylesheets
+  link(rel='stylesheet', href='/stylesheets/login.css')
+
+block content
+  div(ng-controller='indexController')
+    .modal(ng-hide='loggedIn')
+      .modal__inner
+        .modal__header
+          h2 Welcome to ChatDad
+        .modal__footer
+          a(href='/auth/google')
+            i.fa.fa-google-plus(aria-hidden='true')
+            | Login with Google+
+
+append javascripts
+    script(src="/javascripts/controller/indexController.js")
